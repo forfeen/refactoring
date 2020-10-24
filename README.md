@@ -13,7 +13,10 @@ consider this code:
 ```
 public static void main( String[] args ) {
 
-        *Initialize a variable*
+        Map <String,String> opts = parseArgs(args);
+        String strategy = opts.getOrDefault("strategy", "greedy");
+        int capacity = Integer.parseInt(opts.getOrDefault("capacity","10"));
+
 
         if (capacity < 0){
             error("It must be a non-negative integer.");
@@ -45,7 +48,9 @@ public static void main( String[] args ) {
 ```
 public static void main( String[] args ) {
 
-        *Initialize a variable*
+        Map <String,String> opts = parseArgs(args);
+        String strategy = opts.getOrDefault("strategy", "greedy");
+        int capacity = Integer.parseInt(opts.getOrDefault("capacity","10"));
 
         if (capacity < 0){
             error("It must be a non-negative integer.");
